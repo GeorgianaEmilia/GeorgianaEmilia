@@ -6,7 +6,6 @@ from tabulate import tabulate
 Clasa Cerc
 
 Atribute: raza, culoare
-
 Constructor pt ambele atribute
 
 Metode:
