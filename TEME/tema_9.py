@@ -14,6 +14,7 @@ class Login(unittest.TestCase):
     ELEMENTAL_SELENIUM = (By.XPATH, '//*[@id="page-footer"]/div/div/a')
     MIDDLE_NAME_INPUT = (By.XPATH, '//input[@id="middle-name"]')
     FLASH_SUCCESS = (By.XPATH, '//*[@class="flash success"]')
+    BTN_LOGIN=(By.XPATH, '//*[@id="login"]/button')
 
     def setUp(self):
         s = Service(ChromeDriverManager().install())
@@ -48,8 +49,8 @@ class Login(unittest.TestCase):
 
     # Test4 Verificam ca butonul de login este displayed
     def test_elem_displayed(self):
-        middle_name = self.chrome.find_elements()
-        self.assertTrue(len(middle_name) == 0, 'Mid name e vizibil in mod incorect')
+        btn_login = self.chrome.find_elements(*self.BTN_LOGIN)
+        self.assertTrue(len(btn_login) == 1, 'The login button is not visible')
 
     # Test5 Verificam ca atributul href al linkului ‘Elemental Selenium’ e corect
     def test_elem_atribute(self):
